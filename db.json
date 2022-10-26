@@ -152,12 +152,13 @@
       "HorarioSalida": "13:45",
       "Cargo": "AUXILIAR",
       "Telefono": "0961231231",
-      "Disponibilidad": "SI",
+      "Disponibilidad": "DESC",
       "DiaSemana": [
         "1",
         "2",
         "3",
-        "4"
+        "4",
+        "6"
       ],
       "id": 11
     },
@@ -271,10 +272,29 @@
         "4"
       ],
       "id": 19
+    },
+    {
+      "Codigo": "769",
+      "Apellido": "MUSLERA",
+      "HorarioEntrada": "23:30",
+      "HorarioSalida": "08:40",
+      "Cargo": "ENCARGADO",
+      "Telefono": "096123123\t",
+      "Disponibilidad": "SI",
+      "DiaSemana": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "0"
+      ],
+      "id": 20
     }
   ],
   "Dia": {
-    "Dia": "2022-10-29"
+    "Dia": "2022-10-25"
   },
   "Vuelos": [
     {
@@ -283,11 +303,11 @@
       "Partida": "01:50",
       "Funcionarios": [
         "122",
-        "768",
-        "557",
         "650",
+        "768",
+        "784",
         "665",
-        "784"
+        "557"
       ],
       "Cargos": [
         {
@@ -295,15 +315,15 @@
           "trabajo": "ENC"
         },
         {
-          "codigo": "768",
-          "trabajo": "ENC"
-        },
-        {
-          "codigo": "557",
-          "trabajo": "ENC"
-        },
-        {
           "codigo": "650",
+          "trabajo": "ENC"
+        },
+        {
+          "codigo": "768",
+          "trabajo": "MICRO"
+        },
+        {
+          "codigo": "784",
           "trabajo": "ENC"
         },
         {
@@ -311,33 +331,11 @@
           "trabajo": "ENC"
         },
         {
-          "codigo": "784",
-          "trabajo": "ENC"
+          "codigo": "557",
+          "trabajo": "CAMION"
         }
       ],
       "id": 2
-    },
-    {
-      "Nombre": "GOL 7673",
-      "Arribo": "04:30",
-      "Partida": "04:30",
-      "id": 3
-    },
-    {
-      "Nombre": "FEDEX",
-      "Arribo": "02:00",
-      "Partida": "02:00",
-      "id": 4,
-      "Funcionarios": [
-        "469"
-      ],
-      "Cargos": [
-        {
-          "codigo": "469",
-          "trabajo": "ENC",
-          "backgroundColor": "rgb(226, 226, 98)"
-        }
-      ]
     },
     {
       "Nombre": "CM 368",
@@ -380,6 +378,42 @@
       "Funcionarios": [],
       "Cargos": [],
       "id": 8
+    },
+    {
+      "Nombre": "CM 283/8434343",
+      "Arribo": "23:35",
+      "Partida": "08:00",
+      "id": 9,
+      "Funcionarios": [
+        "469",
+        "980"
+      ],
+      "Cargos": [
+        {
+          "codigo": "469",
+          "trabajo": "ENC"
+        },
+        {
+          "codigo": "980",
+          "trabajo": "ENC"
+        }
+      ]
+    },
+    {
+      "Nombre": "GOL 7632342423",
+      "Arribo": "00:39",
+      "Partida": "02:43",
+      "id": 10,
+      "Funcionarios": [
+        "666"
+      ],
+      "Cargos": [
+        {
+          "codigo": "666",
+          "trabajo": "ENC",
+          "backgroundColor": "rgb(226, 226, 98)"
+        }
+      ]
     }
   ]
 }

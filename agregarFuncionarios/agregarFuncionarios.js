@@ -327,14 +327,17 @@ const getAll = async () => {
 
     
       let asignadosOrdenados = []
-
-      for (var i = 0; i < paraVolar.length; i++) {
-      asignados.forEach((asignado) => {
-        if (asignado.Codigo == paraVolar[i]) {
-          asignadosOrdenados.push(asignado)
-        }
-      })
+      if(asignados) {
+        for (var i = 0; i < paraVolar.length; i++) {
+          asignados.forEach((asignado) => {
+            if (asignado.Codigo == paraVolar[i]) {
+              asignadosOrdenados.push(asignado)
+            }
+          })
+          }
       }
+
+     
 
       if (paraVolar != null) {  
  
