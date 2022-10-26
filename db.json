@@ -5,14 +5,14 @@
       "Apellido": "GENTA",
       "HorarioEntrada": "05:00",
       "HorarioSalida": "13:45",
-      "Cargo": "ENCARGADO",
-      "Telefono": "096123123\t",
-      "Disponibilidad": "SI",
+      "Cargo": "OPERARIO",
+      "Telefono": "231231",
+      "Disponibilidad": "BPS",
       "DiaSemana": [
         "1",
         "2",
-        "3",
-        "4"
+        "4",
+        "6"
       ],
       "id": 1
     },
@@ -21,14 +21,14 @@
       "Apellido": "BALERIO",
       "HorarioEntrada": "05:00",
       "HorarioSalida": "13:45",
-      "Cargo": "ENCARGADO",
+      "Cargo": "OPERARIO",
       "Telefono": "0961231231",
       "Disponibilidad": "SI",
       "DiaSemana": [
         "1",
         "2",
-        "3",
-        "4"
+        "4",
+        "6"
       ],
       "id": 2
     },
@@ -69,14 +69,15 @@
       "Apellido": "APATIA",
       "HorarioEntrada": "07:00",
       "HorarioSalida": "15:46",
-      "Cargo": "ENCARGADO",
+      "Cargo": "OPERARIO",
       "Telefono": "0961231231",
-      "Disponibilidad": "SI",
+      "Disponibilidad": "DESC",
       "DiaSemana": [
         "1",
         "2",
         "3",
-        "4"
+        "4",
+        "6"
       ],
       "id": 5
     },
@@ -138,9 +139,9 @@
       "Disponibilidad": "SI",
       "DiaSemana": [
         "1",
-        "2",
         "3",
-        "4"
+        "4",
+        "6"
       ],
       "id": 10
     },
@@ -163,8 +164,8 @@
     {
       "Codigo": "728",
       "Apellido": "FERNANDEZ",
-      "HorarioEntrada": "12:00",
-      "HorarioSalida": "20:45",
+      "HorarioEntrada": "20:00",
+      "HorarioSalida": "20:48",
       "Cargo": "AUXILIAR",
       "Telefono": "0961231231",
       "Disponibilidad": "SI",
@@ -207,69 +208,113 @@
         "4"
       ],
       "id": 15
+    },
+    {
+      "Codigo": "116",
+      "Apellido": "WEYRAUTHER",
+      "HorarioEntrada": "23:30",
+      "HorarioSalida": "20:15",
+      "Cargo": "ENCARGADO",
+      "Telefono": "0961231231",
+      "Disponibilidad": "SI",
+      "DiaSemana": [
+        "1",
+        "2",
+        "4"
+      ],
+      "id": 16
+    },
+    {
+      "Codigo": "538",
+      "Apellido": "MUSLERA",
+      "HorarioEntrada": "22:57",
+      "HorarioSalida": "21:57",
+      "Cargo": "ENCARGADO",
+      "Telefono": "",
+      "Disponibilidad": "DESC",
+      "DiaSemana": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "id": 17
+    },
+    {
+      "Codigo": "653",
+      "Apellido": "VARELA",
+      "HorarioEntrada": "18:13",
+      "HorarioSalida": "18:15",
+      "Cargo": "AUXILIAR",
+      "Telefono": "0961231231",
+      "Disponibilidad": "DESC",
+      "DiaSemana": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "id": 18
+    },
+    {
+      "Codigo": "666",
+      "Apellido": "CARABALLO",
+      "HorarioEntrada": "20:21",
+      "HorarioSalida": "00:41",
+      "Cargo": "AUXILIAR",
+      "Telefono": "0961231231",
+      "Disponibilidad": "SI",
+      "DiaSemana": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "id": 19
     }
   ],
   "Dia": {
-    "Dia": "2022-10-24"
+    "Dia": "2022-10-29"
   },
   "Vuelos": [
     {
-      "Nombre": "CM 283/84",
-      "Arribo": "00:20",
-      "Partida": "01:26",
-      "id": 1,
+      "Nombre": "GOL 7632",
+      "Arribo": "01:50",
+      "Partida": "01:50",
       "Funcionarios": [
-        "529",
         "122",
-        "784",
-        "665",
-        "650",
+        "768",
         "557",
-        "468",
-        "733"
+        "650",
+        "665",
+        "784"
       ],
       "Cargos": [
-        {
-          "codigo": "529",
-          "trabajo": "ENC"
-        },
         {
           "codigo": "122",
           "trabajo": "ENC"
         },
         {
-          "codigo": "650",
-          "trabajo": "CAMION"
-        },
-        {
-          "codigo": "468",
-          "trabajo": "CINTA"
-        },
-        {
-          "codigo": "784",
-          "trabajo": "OP"
-        },
-        {
-          "codigo": "665",
-          "trabajo": "OP"
+          "codigo": "768",
+          "trabajo": "ENC"
         },
         {
           "codigo": "557",
-          "trabajo": "LIMP"
+          "trabajo": "ENC"
         },
         {
-          "codigo": "733",
-          "trabajo": "CHECKIN",
-          "backgroundColor": "rgb(226, 226, 98)"
+          "codigo": "650",
+          "trabajo": "ENC"
+        },
+        {
+          "codigo": "665",
+          "trabajo": "ENC"
+        },
+        {
+          "codigo": "784",
+          "trabajo": "ENC"
         }
-      ]
-    },
-    {
-      "Nombre": "GOL 7632",
-      "Arribo": "01:50",
-      "Partida": "01:50",
-      "Funcionarios": [],
-      "Cargos": [],
+      ],
       "id": 2
     },
     {
@@ -282,13 +327,59 @@
       "Nombre": "FEDEX",
       "Arribo": "02:00",
       "Partida": "02:00",
-      "id": 4
+      "id": 4,
+      "Funcionarios": [
+        "469"
+      ],
+      "Cargos": [
+        {
+          "codigo": "469",
+          "trabajo": "ENC",
+          "backgroundColor": "rgb(226, 226, 98)"
+        }
+      ]
     },
     {
       "Nombre": "CM 368",
       "Arribo": "06:34",
       "Partida": "06:34",
       "id": 6
+    },
+    {
+      "Nombre": "carguero",
+      "Arribo": "18:05",
+      "Partida": "18:06",
+      "id": 7,
+      "Funcionarios": [
+        "728",
+        "538",
+        "116"
+      ],
+      "Cargos": [
+        {
+          "codigo": "728",
+          "trabajo": "ENC",
+          "backgroundColor": "rgb(89, 165, 89)"
+        },
+        {
+          "codigo": "538",
+          "trabajo": "ENC",
+          "backgroundColor": "rgb(89, 165, 89)"
+        },
+        {
+          "codigo": "116",
+          "trabajo": "ENC",
+          "backgroundColor": "rgb(89, 165, 89)"
+        }
+      ]
+    },
+    {
+      "Nombre": "carguero2",
+      "Arribo": "19:07",
+      "Partida": "20:06",
+      "Funcionarios": [],
+      "Cargos": [],
+      "id": 8
     }
   ]
 }

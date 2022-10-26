@@ -4,6 +4,11 @@
 
 .dia {
     text-align: center;;
+    justify-content:center!important; 
+}
+
+.crud-form-dia {
+  text-align: center;
 }
 
 body {
@@ -12,8 +17,10 @@ body {
   }
 
 .crud-table-dia {
-    margin-left: 37.5%;
+
     font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button.style-4::after {
@@ -55,3 +62,4 @@ button.style-4::after {
     border: solid 2px black;
     transition: all 0.3s ease-in-out;
   }
+

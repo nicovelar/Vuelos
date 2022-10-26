@@ -93,8 +93,8 @@ function adelante() {
         $template.querySelector(".delete").dataset.id = el.id
         $template.querySelector(".enc").textContent = ""
         $template.querySelector(".op").textContent = ""
-        $template.querySelector(".vehiculotitle").textContent = "MICRO/CAMION"
-        $template.querySelector(".vehiculo").textContent = ""
+        $template.querySelector(".micro").textContent = ""
+        $template.querySelector(".camion").textContent = ""
         $template.querySelector(".limp").textContent = ""
         $template.querySelector(".cinta").textContent = ""
         $template.querySelector(".checkin").textContent = ""
@@ -112,18 +112,12 @@ function adelante() {
           } )      
           el.Cargos.filter((cargo) => cargo.trabajo == "MICRO").map((elements) => elements.codigo).forEach((codigo) => {
             if(el.Funcionarios.includes(codigo)) {
-             
-              $template.querySelector(".vehiculotitle").textContent = "MICRO"
-           
-              $template.querySelector(".vehiculo").textContent = el.Cargos.filter((cargo) => cargo.trabajo == "MICRO").map((elements) => elements.codigo) 
-             
-              
+              $template.querySelector(".micro").textContent = el.Cargos.filter((cargo) => cargo.trabajo == "MICRO").map((elements) => elements.codigo) 
             }
           } )  
           el.Cargos.filter((cargo) => cargo.trabajo == "CAMION").map((elements) => elements.codigo).forEach((codigo) => {
             if(el.Funcionarios.includes(codigo)) {
-              $template.querySelector(".vehiculo").textContent = el.Cargos.filter((cargo) => cargo.trabajo == "CAMION").map((elements) => elements.codigo) 
-              $template.querySelector(".vehiculotitle").textContent = "CAMION"
+              $template.querySelector(".camion").textContent = el.Cargos.filter((cargo) => cargo.trabajo == "CAMION").map((elements) => elements.codigo) 
             }
           } )       
           el.Cargos.filter((cargo) => cargo.trabajo == "LIMP").map((elements) => elements.codigo).forEach((codigo) => {
@@ -225,6 +219,7 @@ if (e.target.matches(".edit")) {
     $form.nombre.value = e.target.dataset.nombre
     $form.arribo.value = e.target.dataset.arribo
     $form.partida.value = e.target.dataset.partida
+    window.scroll(0, 0)
     }
 
 

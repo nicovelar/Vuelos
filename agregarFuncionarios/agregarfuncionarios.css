@@ -90,3 +90,30 @@ th{
     width: 200%;
     height: 200%;
   }
+
+  .codigo {
+    font-size: xx-large;
+  }
+
+  .botonEnviar {
+    width: 10px !important;
+    height: 10px !important;;
+  }
+
+  .draggable {
+    cursor: move;
+  }
+
+  .draggable.dragging {
+    opacity: .5;
+  }
+
+  .crud-table-encargados {
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .crud-table-encargados-vuelo {
+    font-size: larger;
+    font-weight: bold;
+  }

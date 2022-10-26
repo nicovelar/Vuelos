@@ -214,7 +214,7 @@ body {
   }
 
   .crud-form {
-    margin-right: 10%;
+    margin-right: 10%; 
   }
 
   .crud-title {
@@ -255,4 +255,17 @@ body {
 #diaSemana7 {
   margin-left: 20px;
   transform: scale(1.5)
+}
+
+.crud-table-encargados {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.codigo {
+  font-size: xx-large;
+}
+
+.filtrar {
+  margin-right: 5%;
 }

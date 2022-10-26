@@ -63,6 +63,9 @@ const getAll = async () => {
 
       if (!res.ok) throw { status: res.status, statusText: res.statusText }
 
+      let diaDeHoy = new Date(jason.Dia.substr(0,4),jason.Dia.substr(5,2)-1,jason.Dia.substr(8,2)).getDay()
+      let disponible 
+
       json.sort((a,b) => {
         if (a.HorarioEntrada > b.HorarioEntrada) {
           return 1;
@@ -87,6 +90,19 @@ const getAll = async () => {
         if (horarioEntrada > horarioSalida) {
           horarioSalida.setDate(horarioSalida.getDate() +1)
         }
+
+        let disponibilidad = "DESC"
+        el.DiaSemana.forEach((dia) => {
+          if(diaDeHoy == dia) {
+            disponibilidad = "SI"
+          } 
+        })
+      
+      if(el.Disponibilidad == "BPS") {
+        disponibilidad = "BPS"
+      }
+      disponible = disponibilidad
+      el.Disponibilidad = disponible
 
         let diaSemana = []
         if(el.DiaSemana) {
@@ -286,6 +302,7 @@ if (e.target.matches(".edit")) {
     $form.diaSemana5.checked = e.target.dataset.diaSemana.includes(5)
     $form.diaSemana6.checked = e.target.dataset.diaSemana.includes(6)
     $form.diaSemana7.checked = e.target.dataset.diaSemana.includes(0)
+    window.scroll(0, 0)
     }
 
 //Si el evento click coincide con eliminar, se elimina
@@ -379,6 +396,9 @@ const filtrar = async () => {
 
     if (!res.ok) throw { status: res.status, statusText: res.statusText }
 
+    let diaDeHoy = new Date(jason.Dia.substr(0,4),jason.Dia.substr(5,2)-1,jason.Dia.substr(8,2)).getDay()
+    let disponible 
+
     json.sort((a,b) => {
       if (a.HorarioEntrada > b.HorarioEntrada) {
         return 1;
@@ -405,6 +425,19 @@ const filtrar = async () => {
       if (horarioEntrada > horarioSalida) {
         horarioSalida.setDate(horarioSalida.getDate() +1)
       }
+
+      let disponibilidad = "DESC"
+      el.DiaSemana.forEach((dia) => {
+        if(diaDeHoy == dia) {
+          disponibilidad = "SI"
+        } 
+      })
+    
+    if(el.Disponibilidad == "BPS") {
+      disponibilidad = "BPS"
+    }
+    disponible = disponibilidad
+    el.Disponibilidad = disponible
 
       let diaSemana = []
       if(el.DiaSemana) {
@@ -482,3 +515,123 @@ const filtrar = async () => {
 }
 }
    
+
+
+const buscarPorCodigo = async () => {
+  try {
+    let res = await fetch("http://localhost:3000/Funcionarios")
+      json = await res.json()
+
+      let respuesta = await fetch("http://localhost:3000/Dia")
+      jason = await respuesta.json()
+
+    if (!res.ok) throw { status: res.status, statusText: res.statusText }
+
+    let diaDeHoy = new Date(jason.Dia.substr(0,4),jason.Dia.substr(5,2)-1,jason.Dia.substr(8,2)).getDay()
+    let disponible 
+
+    json.sort((a,b) => {
+      if (a.HorarioEntrada > b.HorarioEntrada) {
+        return 1;
+      }
+      if (a.HorarioEntrada < b.HorarioEntrada) {
+        return -1;
+      }
+      
+      return 0;
+    })  
+
+    if(json.slice(parseInt(window.localStorage.getItem('uno')),parseInt(window.localStorage.getItem('dos'))).length < 10) {
+      noMasAdelante = true
+   } else {
+     noMasAdelante = false
+   }
+
+       
+   let input = document.getElementById("myInput");
+      
+   json.filter((encargado) => encargado.Codigo == input.value).forEach(el => {
+      let horarioEntrada = new Date(jason.Dia.substr(0,4),jason.Dia.substr(5,2)-1,jason.Dia.substr(8,2),el.HorarioEntrada.substr(0,2),el.HorarioEntrada.substr(3,4))
+      let horarioSalida = new Date(jason.Dia.substr(0,4),jason.Dia.substr(5,2)-1,jason.Dia.substr(8,2),el.HorarioSalida.substr(0,2),el.HorarioSalida.substr(3,4))
+
+      if (horarioEntrada > horarioSalida) {
+        horarioSalida.setDate(horarioSalida.getDate() +1)
+      }
+
+      let disponibilidad = "DESC"
+      el.DiaSemana.forEach((dia) => {
+        if(diaDeHoy == dia) {
+          disponibilidad = "SI"
+        } 
+      })
+    
+    if(el.Disponibilidad == "BPS") {
+      disponibilidad = "BPS"
+    }
+    disponible = disponibilidad
+    el.Disponibilidad = disponible
+
+      let diaSemana = []
+      if(el.DiaSemana) {
+        el.DiaSemana.forEach((dia) => {
+          if(dia == 1) {
+            dia = "Lu"
+          } 
+          if(dia == 2) {
+            dia = "Ma"
+          } 
+          if(dia == 3) {
+            dia = "Mi"
+          } 
+          if(dia == 4) {
+            dia = "Ju"
+          } 
+          if(dia == 5) {
+            dia = "Vi"
+          } 
+          if(dia == 6) {
+            dia = "Sa"
+          } 
+          if(dia == 0) {
+            dia = "Do"
+          } 
+          diaSemana.push(dia)
+        })
+      } else {
+        diaSemana = el.DiaSemana
+      }
+      
+      $template.querySelector(".codigo").textContent = el.Codigo
+      $template.querySelector(".apellido").textContent = el.Apellido
+      $template.querySelector(".telefono").textContent = el.Telefono
+      $template.querySelector(".horarioEntrada").textContent = horarioEntrada.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+      $template.querySelector(".horarioSalida").textContent = horarioSalida.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+      $template.querySelector(".cargo").textContent = el.Cargo
+      $template.querySelector(".disponibilidad").textContent = el.Disponibilidad
+      $template.querySelector(".diaSemana").textContent = diaSemana
+      $template.querySelector(".edit").dataset.id = el.id
+      $template.querySelector(".edit").dataset.codigo = el.Codigo
+      $template.querySelector(".edit").dataset.apellido = el.Apellido
+      $template.querySelector(".edit").dataset.telefono = el.Telefono
+      $template.querySelector(".edit").dataset.horarioEntrada = el.HorarioEntrada
+      $template.querySelector(".edit").dataset.horarioSalida = el.HorarioSalida
+      $template.querySelector(".edit").dataset.cargo = el.Cargo
+      $template.querySelector(".edit").dataset.disponibilidad = el.Disponibilidad
+      $template.querySelector(".edit").dataset.diaSemana = el.DiaSemana
+      $template.querySelector(".delete").dataset.apellido = el.Apellido
+      $template.querySelector(".delete").dataset.codigo = el.Codigo
+      $template.querySelector(".delete").dataset.id = el.id
+
+      let $clone = d.importNode($template, true)
+      $fragment.appendChild($clone)
+    
+    })
+
+    $table.querySelector("tbody").remove()
+    $table.appendChild(d.createElement("tbody"))
+    $table.querySelector("tbody").appendChild($fragment)
+  } catch (err) {
+    let message = err || "Ocurrió un error al mostrar"
+    $table.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`)
+  }
+}

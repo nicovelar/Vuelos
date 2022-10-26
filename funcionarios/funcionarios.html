@@ -40,6 +40,7 @@
           <option value="ENCARGADO">ENCARGADO</option>
           <option value="6HS">6HS</option>
           <option value="AUXILIAR">AUXILIAR</option>
+          <option value="OPERARIO">OPERARIO</option>
         </select> <br> <br>
 
         <label for="disponibilidad">Disponibilidad:</label>
@@ -68,9 +69,13 @@
     <option value="ENCARGADO">ENCARGADO</option>
     <option value="AUXILIAR">AUXILIAR</option>
     <option value="6HS">6HS</option>
+    <option value="OPERARIO">OPERARIO</option>
   </select>
-  <button type="button" class="btn btn-secondary" onclick="filtrar()">FILTRAR</button> 
+  <button type="button" class="btn btn-secondary filtrar" onclick="filtrar()">Filtrar</button> 
+  <input type="text" id="myInput" placeholder="Buscar por código..." title="Type in a name">
+  <button  onclick="buscarPorCodigo()" class="btn btn-secondary" > Buscar</button>
 </div> <br>
+
 
     <!-- Sección donde se ven los encargados -->
     <article>
